@@ -268,6 +268,10 @@ header .logo {
  ------------------------------*/
 #some-fact .item {
   width: 200px;
+  transition: transform 0.5s;
+}
+#some-fact .item:hover {
+  transform: translateY(10px);
 }
 /*----------------------------
   End some fact section 
@@ -276,6 +280,7 @@ header .logo {
 /*----------------------------
      Our sponsor section
  ------------------------------*/
+
 #our-sponsors img {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
