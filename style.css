@@ -12,6 +12,7 @@
   --dark7: #f3f3f3;
   --white: #ffffff;
   --primary: #ff900e;
+  --main-bg: rgba(255, 144, 14, 0.1);
 }
 * {
   border: 0;
@@ -25,9 +26,16 @@ html {
 h1 {
   font-size: 4.6rem;
 }
-p,
+h2 {
+  font-size: 3.6rem;
+  color: var(--dark1);
+}
 div {
   font-size: 1.6rem;
+}
+p {
+  font-size: 1.6rem;
+  color: var(--dark3);
 }
 .flex {
   display: flex;
@@ -35,11 +43,20 @@ div {
 .flex-column {
   flex-direction: column;
 }
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .justify-between {
   justify-content: space-between;
 }
 .justify-center {
   justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .items-center {
   align-items: center;
@@ -87,15 +104,22 @@ a {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.my-40 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 /* padding */
-.p-100{
-    padding: 10rem;
+.p-100 {
+  padding: 10rem;
 }
-.p-10{
-    padding: 1rem;
+.p-10 {
+  padding: 1rem;
 }
-.p-30{
-    padding: 3rem;
+.p-15 {
+  padding: 1.5rem;
+}
+.p-30 {
+  padding: 3rem;
 }
 .py-10 {
   padding-top: 1rem;
@@ -120,6 +144,9 @@ a {
 .w-25 {
   width: 25%;
 }
+.w-15 {
+  width: 15%;
+}
 .w-75 {
   width: 70%;
 }
@@ -130,15 +157,21 @@ a {
   aspect-ratio: 1/1;
 }
 img {
-  width: 100%;
+  max-width: 100%;
+}
+.rounded {
+  border-radius: 1rem;
 }
 
 .border {
-  border: 1px solid red;
+  border: 0.1rem solid var(--primary);
 }
 
+/*-----------------------
+  Start Header section 
+ ------------------------*/
 header {
-  background-color: rgba(255, 144, 14, 0.1);
+  background-color: var(--main-bg);
 }
 header nav {
   display: none;
@@ -148,7 +181,6 @@ header nav a {
   transition: all 0.5s;
   font-size: 1.8rem;
   font-weight: 500;
-
   padding: 0.5rem 0.2rem;
   margin-left: 1.5rem;
 }
@@ -162,7 +194,120 @@ header .logo {
   font-size: 4rem;
   font-weight: 700;
 }
+#menu-toggle {
+  display: none;
+}
+#menu-toggle:checked ~ nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: rgba(255, 144, 14, 1);
+  width: 100%;
+  height: 100vh;
+  top: 80px;
+  left: 0;
+}
+#menu-toggle:checked ~ nav a {
+  color: #fff;
+}
+/*-----------------------
+  End Header section 
+ ------------------------*/
+/*-----------------------
+  Start Feature section 
+ ------------------------*/
+.our-features-title {
+  color: var(--dark1);
+}
+.our-features-title span {
+  color: var(--dark3);
+}
+.our-features-title span.last {
+  color: var(--primary);
+}
+/*-----------------------
+  End Feature section 
+ ------------------------*/
 
+/*----------------------------
+  Start Details Feature section 
+ ------------------------------*/
+#details-feature .titile {
+  color: var(--dark1);
+  font-size: 4rem;
+  font-weight: 700;
+  border-left: 0.5rem solid var(--primary);
+  padding-left: 0.5rem;
+}
+#details-feature strong {
+  display: block;
+}
+.card {
+  background-color: var(--primary);
+  width: 25rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  margin: -70px auto 0 auto;
+  z-index: 50;
+  position: relative;
+}
+.card h2,
+.card p {
+  color: var(--white);
+}
+
+/*----------------------------
+  End Details Feature section 
+ ------------------------------*/
+
+/*----------------------------
+     Start some fact section 
+ ------------------------------*/
+#some-fact .item {
+  width: 200px;
+}
+/*----------------------------
+  End some fact section 
+ ------------------------------*/
+
+/*----------------------------
+     Our sponsor section
+ ------------------------------*/
+#our-sponsors img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: all 0.6s;
+}
+#our-sponsors img:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+/*----------------------------
+  End Our sponsor section 
+ ------------------------------*/
+/*----------------------------
+    Start Contact Us 
+ ------------------------------*/
+#contact-us input,
+textarea {
+  display: block;
+}
+/*----------------------------
+    End Contact Us
+ ------------------------------*/
+/*----------------------------
+    Start Footer 
+ ------------------------------*/
+footer p {
+  background: var(--main-bg);
+  padding: 2rem 0;
+}
+/*----------------------------
+  End Footer
+ ------------------------------*/
 
 /* back point  */
 
@@ -186,9 +331,28 @@ header .logo {
   }
   header nav {
     display: block;
+    position: relative;
   }
   .mt-md-100 {
     margin-top: 10rem;
+  }
+  .flex-md {
+    display: flex;
+  }
+  .menu-button-container {
+    display: none;
+  }
+  .flex-md-column {
+    flex-direction: column;
+  }
+  .flex-md-row {
+    flex-direction: row;
+  }
+  .w-md-50 {
+    width: 50%;
+  }
+  .grid-md-cols-2 {
+    grid-template-columns: auto auto;
   }
 }
 
